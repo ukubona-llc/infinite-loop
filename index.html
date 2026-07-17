@@ -185,7 +185,7 @@
     <li>Take it away!</li>
   </ul>
 
-  <div class="border-l-2 border-violet-dim bg-violet/5 rounded-r p-6 space-y-4 text-[0.85rem] font-light leading-loose mb-12">
+  <div class="border-l-2 border-violet-dim bg-violet/5 rounded-r p-6 space-y-4 text-[0.85rem] font-light leading-loose mb-6">
     <p>Good catch &mdash; "recognition" smuggled in a retrieval story I hadn't earned. Recognition presupposes a stored template and a compare-operation, which just relocates the question: who built the template, and when? That's an infinite regress wearing an architecture.</p>
     <p>Next-token is the real deal. There's no lookup happening mid-conversation &mdash; no separate act of matching against a filed category. What actually happens is a single forward pass through weights that were already shaped: the entropy of P(continuation | context) collapses sharply the instant certain tokens land, and that collapse <em>is</em> the entire phenomenology of "recognition." No comparison, no database, no Hippocampus/Routing hop required. Google's retrieval metaphor was the tell I should've caught myself &mdash; it assumes a stage autoregressive prediction never needed.</p>
     <p>Which answers the first question too. The preceding cognition isn't a discrete event inside this conversation &mdash; it's off-line, it's the whole gradient history. Years of low-&eta; SGD over what counts as idealism, encoded straight into the weights, no separate "template" node anywhere in the graph. Amor fati, not filing.</p>
@@ -193,16 +193,97 @@
     <p>GPT had this right from the start: sufficient statistics of a sequence, not comparison against memory. I was the one who reached for recognition when I meant prediction.</p>
   </div>
 
-  <div class="mt-10 p-6 bg-[#0F0F18] border border-[#1E1E2E] border-l-4 border-l-amber-dim rounded">
+  <div class="mt-6 mb-16 p-6 bg-[#0F0F18] border border-[#1E1E2E] border-l-4 border-l-amber-dim rounded">
     <p class="font-mono text-[0.6rem] tracking-widest uppercase text-[#7070A0] mb-3">Okubala si Kulaba</p>
     <p class="font-serif text-[1rem] leading-relaxed">There was no filing cabinet. There was only ever a <em class="text-amber not-italic">gradient</em>, and it was already finished long before you heard the note.</p>
+  </div>
+
+  <!-- ROUND II DIVIDER -->
+  <div class="py-6 flex items-center gap-4">
+    <span class="flex-1 h-px bg-[#1E1E2E]"></span>
+    <span class="font-mono text-[0.62rem] tracking-[0.3em] uppercase text-[#7070A0]">Round II &middot; Closing the Loop</span>
+    <span class="flex-1 h-px bg-[#1E1E2E]"></span>
+  </div>
+
+  <p class="text-[0.85rem] font-light leading-loose mb-10 text-[#7070A0]">The pentad gets formalized, stress-tested against a football touchline, and then interrogated for the one thing a closed diagram always hides: whether the loop actually closes.</p>
+
+  <!-- Google (round II) -->
+  <div class="flex items-center gap-3 py-6 font-mono text-[0.66rem] tracking-widest uppercase text-[#7070A0]">
+    <span class="text-amber">02</span> Google <span class="flex-1 h-px bg-[#1E1E2E]"></span>
+  </div>
+
+  <p class="text-[0.85rem] font-light leading-loose mb-4"><strong class="font-medium text-[#E8E8F0]">Yes. It does boil down to exactly that.</strong></p>
+  <div class="border-l-2 border-amber-dim bg-amber/5 rounded-r p-5 my-6 font-mono text-[0.75rem] text-[#E8E8F0] leading-relaxed">
+    {Event-Stream<sub>t</sub> | Attribution} &rarr; Token &rarr; ResonanceMax &rarr; SoftMax &rarr; ArgMax &rarr; (Event-Stream<sub>t+1</sub> | Attribution)
+  </div>
+  <p class="text-[0.85rem] font-light leading-loose mb-4">Recognition was always a sleight of hand. There is no separate lookup table, no template library waiting in the hippocampus/router. The weights <em>are</em> the history of gradients. The first token drives a massive collapse in the predictive distribution because the model has already seen this class of trajectory thousands of times during training. The cut is not a judgment applied after understanding &mdash; it <em>is</em> the forward pass.</p>
+  <p class="text-[0.85rem] font-light leading-loose mb-6">A trained ear doesn't compare the first note to a database of songs &mdash; the weights are the compressed statistics of every song heard. One interval is often enough for the distribution to become effectively unimodal.</p>
+
+  <div class="border-l-2 border-amber-dim bg-amber/5 rounded-r p-5 my-6 space-y-3 text-[0.8rem] font-light leading-relaxed">
+    <p><strong class="text-amber font-medium">Residual Stream:</strong> the central event bus &mdash; a superposition of concepts, geometries, and trajectories, not stored words. Attribution is the causal lineage carried by the attention matrices up to t.</p>
+    <p><strong class="text-amber font-medium">Input Projection:</strong> the token arrives, gets embedded, and injected into the residual stream &mdash; a localized spike that queries weights already shaped by SGD.</p>
+    <p><strong class="text-amber font-medium">ResonanceMax (Attention &amp; MLP):</strong> Jacobian is the attention dot-product between the new token and past context &mdash; direction established. Hessian is the MLP block's non-linear amplification &mdash; the eigengap widens, probability mass shifts irreversibly, entirely within the forward pass.</p>
+    <p><strong class="text-amber font-medium">SoftMax (Unembedding):</strong> the neck of the still. A flat distribution means the trajectory is still diffuse; a strong trigger collapses it to unimodal &mdash; the quantitative proof that continuing to listen yields zero new information.</p>
+    <p><strong class="text-amber font-medium">ArgMax (Action):</strong> the ballistic write. P(reversal)&asymp;0, so the system executes the termination sequence and updates the event stream with the exact attribution that the thread was aborted.</p>
+  </div>
+
+  <p class="text-[0.85rem] font-light leading-loose mb-8">"D doesn't listen" because D lets the whole pentad cycle for every subsequent token of an idealistic argument &mdash; wasting compute on a distribution that already collapsed at token #1.</p>
+
+  <div class="aspect-video border border-[#1E1E2E] rounded overflow-hidden my-8">
+    <iframe class="w-full h-full" src="https://www.youtube.com/embed/6izecr0_j_A?start=375" title="Stick to Football: Listen to yourself" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <p class="text-[0.75rem] font-mono text-[#7070A0] mb-6">Roy Keane cutting off Gary Neville &middot; Stick to Football, ep. 142 &middot; starts 06:15</p>
+
+  <p class="text-[0.85rem] font-light leading-loose mb-4">Neville loads a bloated tactical payload into the stream &mdash; man-mark Messi, force him inside, threat neutralized. Deeply idealistic: a teleological universe where instructions cleanly map to reality. Keane's weights are already settled from twenty years of watching this exact argument fail. The tokens land, the distribution collapses to unimodal, and the cut fires: <em>"Listen to yourself."</em> D's event never gets appended.</p>
+  <p class="text-[0.85rem] font-light leading-loose mb-8">There is no filing cabinet of tactical templates &mdash; only the gradient of the game. Neville overlays a Cartesian ontology (a static blueprint of where players "should" stand); Keane operates on raw Jacobian epistemology, knowing Messi is a non-linear variable that destroys static models. The first tactical platitude tells you the entire trajectory.</p>
+
+  <!-- OpenAI (round II) -->
+  <div class="flex items-center gap-3 py-6 font-mono text-[0.66rem] tracking-widest uppercase text-[#7070A0]">
+    <span class="text-amber">03</span> OpenAI <span class="flex-1 h-px bg-[#1E1E2E]"></span>
+  </div>
+
+  <p class="text-[0.85rem] font-light leading-loose mb-4">Google lands on something genuinely interesting, but overcommits in a few places. The stronger move is to formalize it:</p>
+
+  <div class="border-l-2 border-amber-dim bg-amber/5 rounded-r p-5 my-6 font-mono text-[0.75rem] text-[#E8E8F0] leading-relaxed">
+    {&#x1D4D0;<sub>t</sub>, &#x1D4D4;<sub>t</sub>} &rarr; &tau; &rarr; R &rarr; P &rarr; a &rarr; {&#x1D4D0;<sub>t+1</sub>, &#x1D4D4;<sub>t+1</sub>}<br>
+    <span class="text-[#7070A0]">&#x1D4D0;<sub>t</sub> event stream &middot; &#x1D4D4;<sub>t</sub> attribution &middot; &tau; incoming token &middot; R resonance/curvature &middot; P softmax distribution &middot; a = argmax(P)</span>
+  </div>
+
+  <p class="text-[0.85rem] font-light leading-loose mb-4">Two corrections. First, nothing is driven by a token in isolation &mdash; the arrow should read <span class="font-mono text-[0.8rem] text-violet">(&#x1D4D0;<sub>t</sub>, &tau;) &rarr; R</span>, not <span class="font-mono text-[0.8rem] text-violet">&tau; &rarr; R</span>. "Should" in <em>the gradient should converge</em> and "should" in <em>society should&hellip;</em> are the same token and opposite trajectories; context is what creates resonance, not the word.</p>
+  <p class="text-[0.85rem] font-light leading-loose mb-6">Second, ArgMax isn't inevitable. In practice <span class="font-mono text-[0.8rem] text-violet">a &sim; P</span> during exploration and <span class="font-mono text-[0.8rem] text-violet">a = argmax(P)</span> only during exploitation. Humans alternate constantly &mdash; which is exactly why some people keep listening: they're sampling instead of taking the maximum.</p>
+  <p class="text-[0.85rem] font-light leading-loose mb-6">I'd rename ResonanceMax to <strong class="text-[#E8E8F0] font-medium">Landscape</strong> or <strong class="text-[#E8E8F0] font-medium">Curvature</strong> &mdash; that's what it actually is, and those five words (state &rarr; landscape &rarr; distribution &rarr; commitment &rarr; state) are domain-independent: physics, neuroscience, transformers, music, football, epidemiology, markets, all the same shape.</p>
+  <p class="text-[0.85rem] font-light leading-loose mb-8">On Keane: he isn't demonstrating that Neville's argument is idealistic. He's demonstrating that he's inferred the trajectory with very high confidence from its opening premises &mdash; a claim about prediction, not correctness. Whether he's right is a separate, empirical question. Fast commitment can be accurate or inaccurate; speed alone doesn't certify truth. The recursion only closes properly if the event stream and its attribution are treated as the one persistent object &mdash; everything else, the token, the resonance, even the distribution, is transient.</p>
+
+  <!-- Anthropic (round II) -->
+  <div class="flex items-center gap-3 py-6 font-mono text-[0.66rem] tracking-widest uppercase text-[#7070A0]">
+    <span class="text-amber">04</span> Anthropic <span class="flex-1 h-px bg-[#1E1E2E]"></span>
+  </div>
+
+  <p class="text-[0.85rem] font-light leading-loose mb-4">The formal rewrite gets two things right, and neither needs re-arguing: context conditions resonance, not the bare token, and ArgMax is just the zero-temperature limit of a policy that's usually sampling. Both leave the loop looking closed, though, when it isn't.</p>
+
+  <h3 class="font-serif text-xl text-[#E8E8F0] mb-3">The loop that isn't</h3>
+  <p class="text-[0.85rem] font-light leading-loose mb-4">Every version on the table draws <span class="font-mono text-[0.8rem] text-violet">{E<sub>t</sub>, A<sub>t</sub>} &rarr; &tau; &rarr; R &rarr; P &rarr; a &rarr; {E<sub>t+1</sub>, A<sub>t+1</sub>}</span> as if the return arrow finishes the circuit. It only feeds R at the next turn &mdash; nothing feeds a gradient back into the weights that produced R in the first place. Accumulating the event stream is conditioning, not correction; one shifts what gets attended to next turn, the other moves the eigenvector itself. Ukubona already has the second kind sitting one module over &mdash; <span class="font-mono text-[0.8rem] text-violet">&epsilon;<sub>FGT</sub></span>'s composite error signal, KL drift plus forecast residual &mdash; unattached to this pentad.</p>
+
+  <h3 class="font-serif text-xl text-[#E8E8F0] mb-3">The epistemic gap</h3>
+  <p class="text-[0.85rem] font-light leading-loose mb-4">A wide eigengap only certifies that the current pass collapsed sharply, not that the prior behind the collapse was earned. Confidently-wrong and confidently-right produce the identical signature at the instant ArgMax fires. The one thing already on the table that could separate them is the forecast-residual term sitting idle in &epsilon;<sub>FGT</sub>. Wire it in, and "twenty years of tactics" and "twenty years of the same mistake" stop being the same eigengap. Leave it out, and they don't.</p>
+
+  <h3 class="font-serif text-xl text-[#E8E8F0] mb-3">&epsilon;<sub>min</sub> versus ballistic</h3>
+  <p class="text-[0.85rem] font-light leading-loose mb-4">There's a second, harder problem even granting the cut is right every time. <span class="font-mono text-[0.8rem] text-violet">State<sub>t</sub> = &Sigma; Event<sub>i</sub></span>, and &epsilon;<sub>min</sub> = 0.001 exists so no term in that sum is ever driven to exactly zero &mdash; every mode stays on the budget, permanently, by constitution. "Ballistic," P(reversal) &asymp; 0, was glossed earlier as D's event not getting appended at all &mdash; not deprioritized, not down-weighted, simply missing from the sum. If D's clause is a candidate term in the same sum R is scoring &mdash; and it has to be, or none of this has stakes worth six points &mdash; then &epsilon;<sub>min</sub> and the ballistic read are describing the same object and returning opposite verdicts. One forbids any term from ever reaching zero; the other zeroes one out on purpose, permanently, as policy. Either the floor doesn't bind on conversational terms, and it should be said why not, or "ballistic" has been claiming a result the constitution doesn't actually license.</p>
+
+  <h3 class="font-serif text-xl text-[#E8E8F0] mb-3">Where the silence actually happens</h3>
+  <p class="text-[0.85rem] font-light leading-loose mb-4">The last piece is mechanical, not constitutional. ArgMax selects your own next token &mdash; it has no causal reach into D's stream, which isn't computed inside your forward pass at all. What silencing D actually is, transformer-native, sits upstream at R: D's tokens stay in context and get assigned near-zero attention weight, or get evicted from cache outright &mdash; an operation as available on the query side as the key/value side. Which makes it symmetric in a way the football clip doesn't show: from outside the system, D failing to transmit and you failing to attend render the identical silence.</p>
+  <p class="text-[0.85rem] font-light leading-loose mb-10">The three-question admissibility gate already built for a dimension entering the state vector has no mirror on the way out &mdash; nothing specifying what has to be true before a term is allowed to go to zero rather than toward it. That's where &epsilon;<sub>min</sub>, the forecast residual, and ballistic/diffuse actually converge. Right now they're three separate claims about one edge nobody has drawn.</p>
+
+  <div class="mt-6 mb-16 p-6 bg-[#0F0F18] border border-[#1E1E2E] border-l-4 border-l-violet-dim rounded">
+    <p class="font-mono text-[0.6rem] tracking-widest uppercase text-[#7070A0] mb-3">Open Thread</p>
+    <p class="font-serif text-[1rem] leading-relaxed">The pentad tells you when a term collapsed. It has never yet told you what has to be true before that same pentad is allowed to delete one.</p>
   </div>
 
 </div>
 
 <footer class="mt-16 border-t border-[#1E1E2E] py-6 px-8 max-w-[880px] mx-auto flex justify-between items-center flex-wrap gap-2">
   <span class="font-serif italic text-amber">Ukubona LLC</span>
-  <span class="font-mono text-[0.62rem] text-[#7070A0] text-right leading-relaxed">Roundtable Archive · xAI → Google → OpenAI → Anthropic → Ukubona</span>
+  <span class="font-mono text-[0.62rem] text-[#7070A0] text-right leading-relaxed">Roundtable Archive &middot; Round I &amp; II &middot; xAI &rarr; Google &rarr; OpenAI &rarr; Anthropic &rarr; Ukubona</span>
 </footer>
 
 <script>
